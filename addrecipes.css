@@ -1,0 +1,370 @@
+
+.header-banner {
+    background-color: #ffa500;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.header-banner .banner-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 60px;
+    font-weight: 300px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header-banner p {
+    margin: 0;
+    font-size: 2rem;
+    color: black;
+}
+
+.add-recipe-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 250px);
+    margin-top: 300px;
+}
+
+.recipe-form-image-style {
+    width: 800px;
+    max-width: 95%;
+    background-color: #f8f8f8;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin: 0 auto;
+}
+
+.form-title-image-style {
+    text-align: left;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 600;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.form-group-image-style {
+    margin-bottom: 35px;
+}
+
+.label-image-style {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.input-image-style,
+.textarea-image-style {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #bbb;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-image-style:focus,
+.textarea-image-style:focus {
+    border-color: #6c8a58;
+    outline: none;
+    box-shadow: 0 0 8px rgba(108, 138, 88, 0.3);
+}
+
+.textarea-image-style {
+    height: 120px;
+    resize: vertical;
+}
+
+.input-with-button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-with-button-wrapper .input-image-style {
+    flex-grow: 1;
+}
+
+.add-button-image-style {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.add-button-image-style:hover {
+    background-color: #5a7647;
+}
+
+.file-upload-group {
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.custom-file-input {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #bbb;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+.custom-file-button {
+    background-color: #888;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-button:hover {
+    background-color: #777;
+}
+
+#file-chosen {
+    margin-left: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.unsplash-search-group {
+    margin-bottom: 40px;
+}
+
+.search-button-image-style {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-button-image-style:hover {
+    background-color: orange;
+}
+
+.post-button-image-style {
+    display: block;
+    width: 100%;
+    padding: 18px 30px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post-button-image-style:hover {
+    background-color: orange;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.message {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Responsive Design Adjustments for various screen sizes */
+@media (max-width: 992px) {
+    .recipe-form-image-style {
+        width: 700px;
+        padding: 50px;
+    }
+    .form-title-image-style {
+        font-size: 2.2rem;
+    }
+    .input-image-style,
+    .textarea-image-style {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+    .label-image-style {
+        font-size: 1.1rem;
+    }
+    .add-button-image-style,
+    .search-button-image-style,
+    .custom-file-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    .post-button-image-style {
+        padding: 16px 25px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .recipe-form-image-style {
+        padding: 40px;
+        max-width: 95%;
+        width: auto;
+    }
+    .form-title-image-style {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .form-group-image-style {
+        margin-bottom: 30px;
+    }
+    .label-image-style {
+        font-size: 1rem;
+    }
+    .input-image-style,
+    .textarea-image-style {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+    .textarea-image-style {
+        height: 100px;
+    }
+    .input-with-button-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .add-button-image-style,
+    .search-button-image-style {
+        width: 100%;
+        text-align: center;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    .custom-file-input {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+    .custom-file-button {
+        width: 100%;
+        text-align: center;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    #file-chosen {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    .post-button-image-style {
+        padding: 14px 20px;
+        font-size: 1.2rem;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-banner {
+        padding: 15px 0;
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    .recipe-form-image-style {
+        padding: 25px;
+    }
+    .form-title-image-style {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+    }
+    .form-group-image-style {
+        margin-bottom: 25px;
+    }
+    .label-image-style {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    .input-image-style,
+    .textarea-image-style {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    .textarea-image-style {
+        height: 80px;
+    }
+    .add-button-image-style,
+    .search-button-image-style,
+    .custom-file-button {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    .post-button-image-style {
+        padding: 12px 18px;
+        font-size: 1.1rem;
+        margin-top: 30px;
+    }
+    .message {
+        font-size: 1rem;
+    }
+}
+
+.ingredient-step-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.ingredient-step-row .input-image-style {
+    flex-grow: 1;
+}
+
+/* Responsive adjustments for dynamically added rows */
+@media (max-width: 768px) {
+    .ingredient-step-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .ingredient-step-row .input-image-style {
+        width: 100%;
+    }
+
+    .ingredient-step-row .add-button-image-style {
+        width: 100%;
+        text-align: center;
+    }
+}

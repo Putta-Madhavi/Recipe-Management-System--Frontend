@@ -1,0 +1,203 @@
+/* Styles specific to the Contact Us page */
+
+/* Header banner to provide visual context for the page */
+.header-banner {
+    background-color: #ffa500;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.header-banner .banner-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 60px;
+    font-weight: 300px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header-banner p {
+    margin: 0;
+    font-size: 2rem;
+    color: black;
+}
+
+/* Main content container, set up with flexbox for centering form */
+.contact-main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    min-height: calc(100vh - 100px);
+    background-color: #f8f8f8;
+}
+
+.contact-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contact-container p {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #ffa500;
+    box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Styling for the form submission button with hover effects */
+.submit-button {
+    width: 100%;
+    padding: 15px 25px;
+    background-color: #ffa500;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: #ffa500;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #ffa500;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px #ffa500(255, 112, 67, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px #ffa500(255, 112, 67, 0.2);
+}
+
+/* Message box for success/error messages */
+.message-box {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message-box.success {
+    background-color: #e6ffed;
+    color: #1a7d3c;
+    border: 1px solid #4CAF50;
+}
+
+.message-box.error {
+    background-color: #ffe6e6;
+    color: #ffa500;
+    border: 1px solid #ffa500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 30px;
+    }
+
+    .contact-container h2 {
+        font-size: 2rem;
+    }
+
+    .contact-container p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .submit-button {
+        padding: 12px 20px;
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-main-content {
+        padding: 20px 15px;
+    }
+    .contact-container {
+        padding: 25px 20px;
+        border-radius: 10px;
+    }
+    .contact-container h2 {
+        font-size: 1.8rem;
+    }
+    .contact-container p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .submit-button {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="../addrecipes.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="header-banner">
+        <div class="banner-content">
+            <p>Home / Add Recipe</p>
+        </div>
+    </div>
+
+    <div class="container add-recipe-container">
+        <form id="recipeForm" class="recipe-form-image-style">
+           
+
+            <div class="form-group-image-style">
+                <label for="recipeName" class="label-image-style">Recipe Name <span class="required">*</span></label>
+                <input type="text" id="recipeName" name="name" placeholder="Enter recipe name" class="input-image-style" required>
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="cuisine" class="label-image-style">Cuisine <span class="required">*</span></label>
+                <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian, Indian" class="input-image-style" required>
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="mealType" class="label-image-style">Meal Type <span class="required">*</span></label>
+                <input type="text" id="mealType" name="mealType" placeholder="e.g., Breakfast, Dinner" class="input-image-style" required>
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="cookingTime" class="label-image-style">Cooking Time (minutes) <span class="required">*</span></label>
+                <input type="number" id="cookingTime" name="cookingTime" placeholder="e.g., 30" class="input-image-style" required min="1">
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="category" class="label-image-style">Category <span class="required">*</span></label>
+                <input type="text" id="category" name="category" placeholder="e.g., Desserts, Main Course" class="input-image-style" required>
+            </div>
+
+            <div class="form-group-image-style">
+                <label class="label-image-style">Ingredients <span class="required">*</span></label>
+                <div id="ingredients-wrapper">
+                    <div class="ingredient-step-row">
+                        <input type="text" id="ingredients" name="ingredients" placeholder="e.g., Tomato, Cheese, Basil (comma separated)" class="input-image-style dynamic-input-field" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="instructions" class="label-image-style">Instructions <span class="required">*</span></label>
+                <textarea id="instructions" name="instructions" placeholder="Step-by-step instructions..." class="textarea-image-style" required></textarea>
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="nutritionalInfo" class="label-image-style">Nutritional Info</label>
+                <input type="text" id="nutritionalInfo" name="nutritionalInfo" placeholder="e.g., 200 kcal, 10g protein" class="input-image-style">
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="averageRating" class="label-image-style">Average Rating</label>
+                <input type="number" step="0.1" id="averageRating" name="averageRating" placeholder="e.g., 4.5" class="input-image-style" min="0" max="5">
+            </div>
+
+            <div class="form-group-image-style">
+                <label for="imageUrl" class="label-image-style">Recipe Image URL</label>
+                <input type="url" id="imageUrl" name="imageUrl" placeholder="e.g., https://example.com/image.jpg" class="input-image-style">
+            </div>
+
+            <button type="submit" class="post-button-image-style">Add Recipe</button>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/add-recipe.js"></script>
+</body>
+</html>

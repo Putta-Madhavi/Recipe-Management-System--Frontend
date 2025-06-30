@@ -1,0 +1,169 @@
+/* Styles specific to the register page's main content and registration form */
+
+/* Main Content container for register page */
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  width: 100vw;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.header-banner {
+  background-color: orange;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.header-banner .banner-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  height: 60px;
+  font-weight: 300px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header-banner p {
+  margin: 0;
+  font-size: 2rem;
+  color: black;
+}
+
+/* Register Box styling */
+.register-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.register-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: orange;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.register-box label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.register-box input,
+.register-box select,
+.register-box textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #f7fafc;
+}
+
+.register-box input:focus,
+.register-box select:focus,
+.register-box textarea:focus {
+  border-color: #ff7043;
+  box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.2);
+  outline: none;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #ff7043 0%, orange 100%);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(255, 112, 67, 0.3);
+}
+
+.register-box button:hover {
+  background: linear-gradient(90deg, #e65100 0%, #d84315 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(255, 112, 67, 0.4);
+}
+
+.register-box button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(255, 112, 67, 0.2);
+}
+
+.register-box p {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 16px;
+  color: #4a5568;
+}
+
+.register-box a {
+  color: #ff7043;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-box a:hover {
+  color: #e65100;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for register box */
+@media (max-width: 768px) {
+  .register-box {
+    padding: 30px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 15px;
+  }
+  .register-box {
+    padding: 20px;
+  }
+  .register-box h2 {
+    font-size: 28px;
+  }
+  .register-box input,
+  .register-box select,
+  .register-box textarea,
+  .register-box button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}

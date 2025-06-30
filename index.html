@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Recipe hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="logo"><i class="fas fa-chef"></i>TheRecipe<span class="logo-orange">Hub</span></a>
+    <nav class="nav-links">
+      <a href="#" class="nav-link active" data-page="home">HOME</a>
+      <a href="recipes.html" class="nav-link" data-page="recipes">RECIPES</a>
+      <a href="add-recipe.html" class="nav-link" data-page="AddRecipe">ADD RECIPE</a>
+      <a href="pages/contact.html" class="nav-link" data-page="contact">CONTACT</a>
+    </nav>
+    <div class="header-right-group">
+      <span id="navbar-username" style="display:none; margin-right: 15px; font-weight: 600; color: #333;"></span>
+
+      <a href="#" class="logout-link" title="Logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </a>
+      <div class="profile-icon">
+        <a href="pages/login.html" class="profile-icon-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="main-content-container">
+    <main class="container" id="home-page-content">
+      <section class="main-section">
+        <div class="main-content">
+          <h1>Explore <br><span class="highlight">Culinary</span> Insights</h1>
+          <p>Unleash your inner chef with our collection of diverse recipes</p>
+          <div class="main-search-bar">
+            <form id="main-search-form">
+                <input type="text" id="main-search-input" name="ingredient" placeholder="Search for ingredients...">
+                
+                <select id="main-meal-type" name="mealType">
+                    <option value="">Any Meal Type</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Snack">Snack</option>
+                    <option value="Appetizer">Appetizer</option>
+                    <option value="Side">Side Dish</option>
+                    <option value="Soup">Soup</option>
+                    </select>
+
+                <select id="main-cuisine" name="cuisine">
+                    <option value="">Any Cuisine</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="French">French</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="American">American</option>
+                    <option value="Thai">Thai</option>
+                    </select>
+
+                <select id="main-max-cooking-time" name="maxCookingTime">
+                    <option value="">Max Cook Time</option>
+                    <option value="15">15 mins or less</option>
+                    <option value="30">30 mins or less</option>
+                    <option value="45">45 mins or less</option>
+                    <option value="60">1 hour or less</option>
+                    <option value="90">1.5 hours or less</option>
+                    <option value="120">2 hours or less</option>
+                    </select>
+
+                    <select id="main-ingredient-select" name="ingredientSelect">
+                    <option value="">Select an Ingredient</option>
+                    <option value="Chicken">Chicken</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Potatoes">Potatoes</option>
+                    <option value="Eggs">Eggs</option>
+                    <option value="Tomatoes">Tomatoes</option>
+                    <option value="Onions">Onions</option>
+                    <option value="Garlic">Garlic</option>
+                    <option value="Cheese">Cheese</option>
+                    <option value="Spinach">Spinach</option>
+                    </select>
+               <select id="main-dietary-requirement" name="dietaryRequirement">
+                <option value="">Any Dietary</option>
+                 <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option> <option value="Gluten-Free">Gluten-Free</option>
+               <option value="Dairy-Free">Dairy-Free</option>
+               <option value="Low-Carb">Low-Carb</option>
+               <option value="Keto">Keto</option>
+              </select>
+
+                <button type="submit">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </form>
+            </div>
+        </div>
+      </section>
+
+      <section class="what-to-cook-section">
+        <h2>What to <span class="highlight-orange">Cook</span>?</h2>
+        <div class="category-buttons">
+          <button class="category-button active" data-category="All Types">
+            <i class="fas fa-th-large icon-orange"></i> <span>All Types</span>
+          </button>
+          <button class="category-button" data-category="Quick & Easy Meals">
+            <i class="fas fa-bolt icon-orange"></i> <span>Quick & Easy Meals</span>
+          </button>
+          <button class="category-button" data-category="Vegetarian & Vegan Delights">
+            <i class="fas fa-leaf icon-orange"></i> <span>Vegetarian & Vegan Delights</span>
+          </button>
+          <button class="category-button" data-category="Healthy & Low-Carb Recipes">
+            <i class="fas fa-heartbeat icon-orange"></i> <span>Healthy & Low-Carb Recipes</span>
+          </button>
+          <button class="category-button" data-category="Desserts & Sweets">
+            <i class="fas fa-ice-cream icon-orange"></i> <span>Desserts & Sweets</span>
+          </button>
+          <button class="category-button" data-category="Breakfast & Brunch Specials">
+            <i class="fas fa-egg icon-orange"></i> <span>Breakfast & Brunch Specials</span>
+          </button>
+          <button class="category-button" data-category="Street Food & Snacks">
+            <i class="fas fa-hotdog icon-orange"></i> <span>Street Food & Snacks</span>
+          </button>
+          <button class="category-button" data-category="Main Courses & Dinner Ideas">
+            <i class="fas fa-utensils icon-orange"></i> <span>Main Courses & Dinner Ideas</span>
+          </button>
+          <button class="category-button" data-category="Soups, Salads & Sides">
+            <i class="fas fa-carrot icon-orange"></i> <span>Soups, Salads & Sides</span>
+          </button>
+          <button class="category-button" data-category="Festive & Traditional Recipes">
+            <i class="fas fa-star icon-orange"></i> <span>Festive & Traditional Recipes</span>
+          </button>
+        </div>
+
+      </section>
+
+      <section id="all-recipes-section" class="recipe-grid" style="margin-top: 40px;">
+      </section>
+
+      <div class="load-more-section">
+        <button id="load-more-button" class="cta-button">Load More Recipes</button>
+      </div>
+    </main>
+
+    <section id="search-results" class="search-results-section" style="display: none;">
+    </section>
+  </div>
+
+  <section id="advanced-search-modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Advanced Search</h2>
+      <form id="advanced-search-form">
+        <input type="text" name="cuisine" placeholder="Cuisine (e.g., Italian)">
+        <input type="text" name="mealType" placeholder="Meal Type (e.g., Dinner)">
+        <input type="number" name="maxCookingTime" placeholder="Max Cooking Time (minutes)">
+        <input type="text" name="dietaryRequirement" placeholder="Dietary Requirement (e.g., Vegan)">
+        <input type="text" name="ingredient" placeholder="Ingredient (e.g., Chicken)">
+        <button type="submit" class="cta-button">Search</button>
+        <button type="button" id="close-advanced-search" class="cta-button">Close</button>
+      </form>
+    </div>
+  </section>
+
+ <footer style="display: flex; justify-content: space-between; padding: 20px; background-color: #f8f8f8;">
+  <div style="width: 33%;">
+    <h3>Menu</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="#">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+       <li><a href="add-recipe.html">Add Recipe</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div style="width: 33%;">
+<h3>Contact</h3>
+<p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
+<p><i class="fas fa-envelope"></i> therecipehub@gmail.com</p>
+<p><i class="fas fa-phone"></i> +91 999 666 8880</p>
+  </div>
+  <div style="width: 33%;">
+    <h3>TheRecipehub</h3>
+    <p>Join TheRecipeHub now and embark on a culinary journey to explore, create, and savor amazing recipes</p>
+    <form>
+      <input type="email" placeholder="Enter your email" style="padding: 5px; margin-right: 5px;">
+      <button type="submit" style="padding: 5px 10px;">Subscribe</button>
+    </form>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

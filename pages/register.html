@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Recipe Management</title>
+
+  <!-- Font & CSS -->
+  <link rel="stylesheet" href="../style.css"> 
+  <link rel="stylesheet" href="../css/register.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div class="header-banner">
+    <div class="banner-content">
+      <p>Home / Login</p>
+    </div>
+  </div>
+  <div class="page-content-wrapper" style="display: flex; flex-grow: 1; justify-content: center; align-items: center; width: 100%;">
+    <main class="main-content">
+      <section class="register-box">
+        <h2>Create Your Account</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required placeholder="Enter your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="Enter your email" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required placeholder="Create a password" autocomplete="new-password" />
+          </div>
+
+          <div class="form-group">
+            <label for="cookingSkill">Cooking Skill Level</label>
+            <select id="cookingSkill" required>
+              <option value="">-- Select Level --</option>
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dietary">Dietary Preferences</label>
+            <input type="text" id="dietary" placeholder="e.g., Vegan, Low Carb" />
+          </div>
+
+          <div class="form-group">
+            <label for="allergies">Allergies</label>
+            <input type="text" id="allergies" placeholder="e.g., Nuts, Soy" />
+          </div>
+
+          <div class="form-group">
+            <label for="avoid">Avoid Ingredients</label>
+            <input type="text" id="avoid" placeholder="e.g., Maida, Sugar" />
+          </div>
+
+          <button type="submit"><i class="fas fa-user-plus"></i> Register</button>
+        </form>
+
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+      </section>
+    </main>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- JS -->
+  <script src="../js/include-layouts.js"></script>
+  <script src="../js/register.js"></script>
+</body>
+</html>

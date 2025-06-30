@@ -1,0 +1,191 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    width: 100%; 
+}
+
+.main-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    padding: 30px; 
+    min-height: calc(100vh - 120px); 
+ background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); 
+    width: 100vw; 
+    max-width: none;
+    box-sizing: border-box; 
+    margin: 0; 
+}
+
+.header-banner {
+  background-color: orange; 
+  padding: 20px 0; 
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem; 
+  margin-bottom: 60px; 
+  font-size: 20px; 
+  align-items: center;
+  text-align: center;
+}
+
+.header-banner .banner-content {
+  max-width: 1400px; 
+  margin: 0 auto;
+  padding: 0 30px; 
+  height: 60px;
+  font-weight: 300px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header-banner p {
+  margin: 0;
+  font-size: 2rem;
+  color: black; 
+}
+
+
+/* Login Box styling */
+.login-box {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+    width: 90%;
+    max-width: 550px; 
+    box-sizing: border-box;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(220, 220, 220, 0.5);
+}
+
+.login-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid #dbe4ee;
+    font-size: 17px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background: #fdfefe;
+    color: #333;
+}
+
+.login-box input::placeholder {
+    color: black;
+}
+
+.login-box input:focus {
+    border-color: orange;
+    box-shadow: 0 0 0 4px rgba(106, 137, 204, 0.2);
+    background-color: #f7f9fc;
+    outline: none;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, orange 0%, orange 100%);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 19px;
+    box-shadow: 0 8px 18px rgba(106, 137, 204, 0.3);
+}
+
+.login-box button:hover {
+    background: linear-gradient(90deg, orange 0%, orange 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(106, 137, 204, 0.4);
+}
+
+.login-box button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(106, 137, 204, 0.2);
+}
+
+.login-box p {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 16px;
+    color: #5d6d7e;
+}
+
+.login-box a {
+    color: orange;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.login-box a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for login box */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+    .login-box {
+        padding: 40px;
+        max-width: 90%;
+    }
+    .login-box h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .login-box input,
+    .login-box button {
+        padding: 14px 18px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 15px;
+    }
+    .login-box {
+        padding: 25px;
+        border-radius: 15px;
+        width: 95%;
+        max-width: none;
+    }
+    .login-box h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .login-box input,
+    .login-box button {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    .login-box button {
+        font-size: 17px;
+    }
+    .login-box p {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+}

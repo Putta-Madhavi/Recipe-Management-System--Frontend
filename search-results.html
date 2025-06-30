@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results - Hyscaler Recipe Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
+
+  <div id="main-content-container">
+    <main class="container">
+      <h1 style="text-align: center;">Search Results</h1>
+      <p id="search-query-display" style="text-align: center; margin-bottom: 20px; font-style: italic;"></p>
+      <div id="results-container" class="recipe-grid">
+        <p id="loading-message">Loading recipes...</p>
+      </div>
+      <p id="no-results-message" style="display: none; text-align: center; font-weight: bold;">No recipes found for your search.</p>
+      <p id="error-message" style="display: none; color: red; text-align: center; font-weight: bold;"></p>
+    </main>
+  </div>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         class="feather feather-arrow-up">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="js/search-results-script.js"></script>
+
+  <!-- Load header and footer -->
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const response = await fetch(file);
+        const content = await response.text();
+        document.getElementById(id).innerHTML = content;
+      } catch (err) {
+        console.error(`Error loading ${file}:`, err);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      includeHTML("header-placeholder", "components/header.html");
+      includeHTML("footer-placeholder", "components/footer.html");
+    });
+  </script>
+</body>
+</html>

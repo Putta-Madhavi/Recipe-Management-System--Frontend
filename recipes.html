@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flavoriz Recipe Website</title>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+</head>
+<body>
+
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <div class="banner-content">
+      <p>Home / Recipes</p>
+    </div>
+  </div>
+  <style>
+    .header-banner {
+    background-color: orange; 
+    padding: 20px 0; 
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem; 
+    margin-bottom: 60px; 
+     font-size: 20px;
+     align-items: center;
+     text-align: center;
+    
+}
+
+.header-banner .banner-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px; 
+    height: 60px;
+    font-weight: 300px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+
+.header-banner p {
+    margin: 0;
+    font-size: 2rem;
+    color: black; 
+    
+}
+  </style>
+  <!-- Filter Form -->
+  <form id="filter-form" class="filter-form" style="text-align: center; margin-bottom: 20px;">
+    <input type="text" id="cuisine" placeholder="Cuisine">
+    <input type="text" id="mealType" placeholder="Meal Type">
+    <input type="number" id="maxCookingTime" placeholder="Max Time (min)">
+    <input type="text" id="dietaryRequirement" placeholder="Dietary (e.g. Vegan)">
+    <input type="text" id="ingredient" placeholder="Ingredient">
+    <button type="submit">Apply Filters</button>
+  </form>
+
+  <!-- Recipe Cards Section -->
+  <section id="all-recipes-section" class="recipe-grid" style="margin-top: 40px;"></section>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load Header and Footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Import header
+      fetch("components/header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header-placeholder").innerHTML = data);
+
+      // Import footer
+      fetch("components/footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+
+      // Load all recipes
+      loadAllRecipes();
+
+      // Listen for filter form submission
+      document.getElementById("filter-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        applyFilters();
+      });
+    });
+
+    function loadAllRecipes() {
+      fetch("http://localhost:7090/api/recipes")
+        .then(res => res.json())
+        .then(data => {
+          renderRecipes(data);
+        })
+        .catch(err => {
+          console.error("Error loading recipes:", err);
+          document.getElementById("all-recipes-section").innerHTML = "<p>Error loading recipes.</p>";
+        });
+    }
+
+    function applyFilters() {
+      const cuisine = document.getElementById("cuisine").value;
+      const mealType = document.getElementById("mealType").value;
+      const maxCookingTime = document.getElementById("maxCookingTime").value;
+      const dietaryRequirement = document.getElementById("dietaryRequirement").value;
+      const ingredient = document.getElementById("ingredient").value;
+
+      const params = new URLSearchParams();
+      if (cuisine) params.append("cuisine", cuisine);
+      if (mealType) params.append("mealType", mealType);
+      if (maxCookingTime) params.append("maxCookingTime", maxCookingTime);
+      if (dietaryRequirement) params.append("dietaryRequirement", dietaryRequirement);
+      if (ingredient) params.append("ingredient", ingredient);
+
+      fetch(`http://localhost:7090/api/recipes/search?${params.toString()}`)
+        .then(res => res.json())
+        .then(data => {
+          renderRecipes(data);
+        })
+        .catch(err => {
+          console.error("Error applying filters:", err);
+          document.getElementById("all-recipes-section").innerHTML = "<p>Error filtering recipes.</p>";
+        });
+    }
+
+    function renderRecipes(recipes) {
+      const section = document.getElementById("all-recipes-section");
+      section.innerHTML = "";
+
+      if (!recipes || recipes.length === 0) {
+        section.innerHTML = "<p>No recipes found.</p>";
+        return;
+      }
+
+      recipes.forEach(recipe => {
+        const div = document.createElement("div");
+        div.className = "recipe-card";
+        div.innerHTML = `
+          <img src="${recipe.imageUrl || 'placeholder.jpg'}" alt="${recipe.name}" onerror="this.src='placeholder.jpg';">
+          <h3>${recipe.name}</h3>
+          <p><strong>Cuisine:</strong> ${recipe.cuisine || 'N/A'}</p>
+          <p><strong>Meal Type:</strong> ${recipe.mealType || 'N/A'}</p>
+          <p><strong>Time:</strong> ${recipe.cookingTime || 'N/A'} mins</p>
+          <p><strong>Category:</strong> ${recipe.category || 'N/A'}</p>
+          <a href="single-recipe.html?id=${recipe.id}" class="view-btn">View Recipe</a>
+        `;
+        section.appendChild(div);
+      });
+    }
+  </script>
+    <script src="/js/recipes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

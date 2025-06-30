@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Recipes - Recipe Compass</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="singlerecipe.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <section class="recipes-list">
+      <h1>All Recipes</h1>
+      <div id="all-recipes" class="recipe-cards">
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/recipes.js"></script>
+  <script>
+    // Load navbar and footer
+    fetch('components/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+    // Fetch and display all recipes
+    async function fetchRecipes() {
+      try {
+        const response = await fetch('http://localhost:7090/api/recipes');
+        const recipes = await response.json();
+        displayRecipes(recipes);
+      } catch (error) {
+        console.error('Error fetching recipes:', error);
+        document.getElementById('all-recipes').innerHTML = '<p>Failed to load recipes. Please try again later.</p>';
+      }
+    }
+
+    function displayRecipes(recipes) {
+      const container = document.getElementById('all-recipes');
+      container.innerHTML = '';   
+
+      if (!recipes || recipes.length === 0) {
+        container.innerHTML = '<p>No recipes available.</p>';
+        return;
+      }
+
+      recipes.forEach(recipe => {
+        const card = document.createElement('div');
+        card.className = 'recipe-card';
+        card.innerHTML = `
+          <img src="${recipe.imageUrl || 'placeholder.jpg'}" alt="${recipe.name}" onerror="this.src='placeholder.jpg';">
+          <h3>${recipe.name}</h3>
+          <p><strong>Cuisine:</strong> ${recipe.cuisine || 'N/A'}</p>
+          <p><strong>Meal Type:</strong> ${recipe.mealType || 'N/A'}</p>
+          <p><strong>Cooking Time:</strong> ${recipe.cookingTime || 'N/A'} mins</p>
+          <p><strong>Category:</strong> ${recipe.category || 'N/A'}</p>
+          <p><strong>Rating:</strong> ${recipe.averageRating ? `${recipe.averageRating} ⭐` : 'N/A'}</p>
+          <a href="single-recipe.html?id=${recipe.id}" class="view-btn">View Recipe</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Load recipes on page load
+    window.onload = fetchRecipes;
+  </script>
+</body>
+</html>
