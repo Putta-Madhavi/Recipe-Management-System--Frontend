@@ -111,7 +111,7 @@ Ensure your frontend API calls are directed to the correct backend endpoint. The
 * Use Postman or your browser's developer tools to thoroughly test individual backend API endpoints and verify request/response cycles.
 
 
-## ##  Screenshots
+## Screenshots
 
 Here are some screenshots demonstrating the application:
 
