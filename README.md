@@ -1,5 +1,7 @@
 # The Recipe Hub: Recipe Management System
 
+![Mobile View - Hero Section and Search](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142354.png)
+
 # Description
 
 The Recipe Hub is a personalized recipe management system that allows users to register, create profiles, 
@@ -113,14 +115,18 @@ Ensure your frontend API calls are directed to the correct backend endpoint. The
 
 Here are some screenshots demonstrating the application:
 
-### Desktop View (Homepage - Lower Section with Load More & Footer)
-![Desktop View - Footer and Load More Recipes](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142521.png)
+### Mobile View (Homepage - Hero Section with Search Bar)
+![Mobile View - Hero Section and Search](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142354.png)
+
 
 ### Tablet View (Recipe Listing with Filters)
 ![Tablet View - Recipe List and Filters](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142431.png)
 
-### Mobile View (Homepage - Hero Section with Search Bar)
-![Mobile View - Hero Section and Search](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142354.png)
+
+### Desktop View (Homepage - Lower Section with Load More & Footer)
+![Desktop View - Footer and Load More Recipes](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142521.png)
+
+
 
 ## Conclusion
 
