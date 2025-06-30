@@ -109,10 +109,18 @@ Ensure your frontend API calls are directed to the correct backend endpoint. The
 * Use Postman or your browser's developer tools to thoroughly test individual backend API endpoints and verify request/response cycles.
 
 
-##  Screenshots
+## ##  Screenshots
 
-*(Include your screenshots here, perhaps with headings like "Login Screen," "Recipe Search," "Add Recipe," etc. You'll need to embed these as images in your actual GitHub README using Markdown image syntax, e.g., `![Alt text for screenshot](path/to/your/image.png)`)*
+Here are some screenshots demonstrating the application:
 
+### Desktop View (Homepage - Lower Section with Load More & Footer)
+![Desktop View - Footer and Load More Recipes](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142521.png)
+
+### Tablet View (Recipe Listing with Filters)
+![Tablet View - Recipe List and Filters](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142431.png)
+
+### Mobile View (Homepage - Hero Section with Search Bar)
+![Mobile View - Hero Section and Search](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142354.png)
 
 ## Conclusion
 
