@@ -26,7 +26,6 @@ to be modular and scalable.
 * [ Screenshots](#-screenshots)
 * [ Conclusion](#-conclusion)
 
----
 
 ## Features
 
@@ -36,7 +35,6 @@ to be modular and scalable.
 * **Add Recipes:** Users can contribute their own recipes by providing a title, ingredients, instructions, and categorizing them with appropriate cuisine, meal type, and dietary tags.
 * **Recipe Database Integration:** All recipes are stored in a structured MySQL database, containing essential information like title, ingredients, instructions, cooking time, cuisine type, meal type, and dietary classification for efficient retrieval and display.
 
----
 
 ## Tech Stack
 
@@ -45,7 +43,6 @@ to be modular and scalable.
 * **Database:** MySQL (for storing user profiles, recipe data, ratings, and reviews)
 * **API Testing:** Postman (for testing API endpoints and verifying request/response cycles)
 
----
 
 ## Demo and Links
 
@@ -53,7 +50,6 @@ to be modular and scalable.
 * **GitHub Repository - Frontend:** [https://github.com/Putta-Madhavi/Recipe-Management-System--Frontend/tree/master](https://github.com/Putta-Madhavi/Recipe-Management-System--Frontend/tree/master)
 * **GitHub Repository - Backend:** [https://github.2com/Putta-Madhavi/Recipe-Management-System--Backend/tree/master](https://github.com/Putta-Madhavi/Recipe-Management-System--Backend/tree/master)
 
----
 
 ## Running the Project Locally
 
@@ -82,7 +78,7 @@ Ensure you have the following installed:
     You can typically do this from your terminal within the backend project directory using:
     ```bash
     mvn spring-boot:run
-    ```
+    
 
 4.  **Access Backend:**
     The backend APIs will be accessible at: `http://localhost:8080/`
@@ -106,20 +102,17 @@ Ensure you have the following installed:
 Ensure your frontend API calls are directed to the correct backend endpoint. The frontend is configured to point to:
 `http://localhost:8080/api/recipes`
 
----
 
 ## Testing the Application
 
 * Test user registration, recipe submission, search, and reviews directly from the frontend user interface.
 * Use Postman or your browser's developer tools to thoroughly test individual backend API endpoints and verify request/response cycles.
 
----
 
 ##  Screenshots
 
 *(Include your screenshots here, perhaps with headings like "Login Screen," "Recipe Search," "Add Recipe," etc. You'll need to embed these as images in your actual GitHub README using Markdown image syntax, e.g., `![Alt text for screenshot](path/to/your/image.png)`)*
 
----
 
 ## Conclusion
 
