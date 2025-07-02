@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             const html = await response.text();
             const element = document.getElementById(elementId);
+            //converts the fetched data to html
             if (element) {
                 element.innerHTML = html;
             } else {
