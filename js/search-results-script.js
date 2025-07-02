@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxCookingTime = urlParams.get('maxCookingTime') || null;
     const dietaryRequirement = urlParams.get('dietaryRequirement')?.trim() || null;
 
-    // Pre-fill search box with ingredient or query if available
-    // This ensures the search bar on the results page reflects what was searched
+    //fills the search box with searched value
     if (searchInputResults) {
         if (ingredient) {
             searchInputResults.value = ingredient;
@@ -33,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayParts = [];
     let hasActiveSearchParams = false; 
 
-    // Build query parameters for the API call and for display
-    // Prioritize 'ingredient' param, then fallback to 'query' for the ingredient search
+     //to check parameter
     if (ingredient) {
         queryParams.append('ingredient', ingredient);
         displayParts.push(`Ingredient: ${ingredient}`);
