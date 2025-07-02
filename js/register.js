@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Global showMessage function
+// Global showMessage to the user 
 function showMessage(message, type = "info") {
   let messageBox = document.getElementById("messageBox");
   if (!messageBox) {
