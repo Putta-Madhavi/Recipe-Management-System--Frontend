@@ -122,7 +122,7 @@
       if (ingredient) params.append("ingredient", ingredient);
       
       //Sends the filter data to the backend using a GET request.
-      
+
       fetch(`http://localhost:7090/api/recipes/search?${params.toString()}`)
         .then(res => res.json())
         .then(data => {
@@ -145,6 +145,7 @@
 
       recipes.forEach(recipe => {
         const div = document.createElement("div");
+        //clear previous recipes
         div.className = "recipe-card";
         div.innerHTML = `
           <img src="${recipe.imageUrl || 'placeholder.jpg'}" alt="${recipe.name}" onerror="this.src='placeholder.jpg';">
