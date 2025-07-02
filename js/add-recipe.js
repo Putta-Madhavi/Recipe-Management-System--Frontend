@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             messageDiv.textContent = '';
             messageDiv.classList.remove('success', 'error');
 
+            //collects all form fields and coverts to recipe jsobject 
             const recipe = {
                 name: form.name.value,
                 cuisine: form.cuisine.value,
