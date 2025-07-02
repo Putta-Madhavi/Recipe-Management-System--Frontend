@@ -91,6 +91,8 @@
         applyFilters();
       });
     });
+    
+      //Fetches all recipes from the backend and passes them to renderRecipes().
 
     function loadAllRecipes() {
       fetch("http://localhost:7090/api/recipes")
@@ -104,6 +106,7 @@
         });
     }
 
+    //adding filters
     function applyFilters() {
       const cuisine = document.getElementById("cuisine").value;
       const mealType = document.getElementById("mealType").value;
@@ -117,7 +120,9 @@
       if (maxCookingTime) params.append("maxCookingTime", maxCookingTime);
       if (dietaryRequirement) params.append("dietaryRequirement", dietaryRequirement);
       if (ingredient) params.append("ingredient", ingredient);
-
+      
+      //Sends the filter data to the backend using a GET request.
+      
       fetch(`http://localhost:7090/api/recipes/search?${params.toString()}`)
         .then(res => res.json())
         .then(data => {
