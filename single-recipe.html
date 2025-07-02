@@ -34,55 +34,7 @@
   </script>
 
   <!-- Script to fetch and display single recipe -->
-  <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-      const recipeDetailSection = document.getElementById("recipe-detail-section");
-      const loadingMessage = recipeDetailSection.querySelector(".loading-message");
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const recipeId = urlParams.get("id");
-
-      if (!recipeId) {
-        loadingMessage.textContent = "No recipe ID found in URL.";
-        return;
-      }
-
-      try {
-        const response = await fetch(`http://localhost:7090/api/recipes/${recipeId}`);
-        if (!response.ok) throw new Error("Failed to fetch recipe");
-        const recipe = await response.json();
-
-        loadingMessage.style.display = 'none';
-
-        const ingredientsList = Array.isArray(recipe.ingredients)
-          ? recipe.ingredients.map(i => `<li>${i}</li>`).join('')
-          : recipe.ingredients?.split(',').map(i => `<li>${i.trim()}</li>`).join('') || '';
-
-        const instructionsList = Array.isArray(recipe.instructions)
-          ? recipe.instructions.map(i => `<li>${i}</li>`).join('')
-          : recipe.instructions?.split('.').map(i => i.trim()).filter(Boolean).map(i => `<li>${i}</li>`).join('') || '';
-
-        recipeDetailSection.innerHTML = `
-          <h1>${recipe.name}</h1>
-          <img src="${recipe.imageUrl || 'placeholder.jpg'}" alt="${recipe.name}" class="recipe-image" onerror="this.src='placeholder.jpg';">
-          <div class="details-grid">
-            <div class="detail-item"><strong>Cuisine:</strong> ${recipe.cuisine || 'N/A'}</div>
-            <div class="detail-item"><strong>Meal Type:</strong> ${recipe.mealType || 'N/A'}</div>
-            <div class="detail-item"><strong>Category:</strong> ${recipe.category || 'N/A'}</div>
-            <div class="detail-item"><strong>Cooking Time:</strong> ${recipe.cookingTime || 'N/A'} mins</div>
-            <div class="detail-item"><strong>Rating:</strong> ${recipe.averageRating || 'N/A'} ⭐</div>
-          </div>
-          <h2>Ingredients</h2>
-          <ul>${ingredientsList}</ul>
-          <h2>Instructions</h2>
-          <ol>${instructionsList}</ol>
-        `;
-      } catch (error) {
-        console.error(error);
-        loadingMessage.textContent = "Failed to load recipe. Please try again later.";
-      }
-    });
-  </script>
+ 
     <script src="js/single-recipe.js"></script>
 </body>
 </html>
