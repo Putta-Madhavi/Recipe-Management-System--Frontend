@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Function to fetch and inject HTML
     async function includeHTML(elementId, filePath) {
         try {
+            //to fetch elements from the path
             const response = await fetch(filePath);
             if (!response.ok) {
                 // If the file is not found (404) or other HTTP error
@@ -22,11 +23,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     }
-
-    // Determine the base path for components relative to the current HTML file
-    // Assuming 'login.html' is in 'pages/' and 'components/' is one level up.
-    // If 'components' is at the root, and 'pages' is a sibling to 'js',
-    // then from 'pages/login.html' you need to go up one level (..) then into 'components/'
     const basePath = '../components/'; 
 
     // Load Header
