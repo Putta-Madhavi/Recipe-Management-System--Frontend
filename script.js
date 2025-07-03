@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 finalIngredientValue = ingredientSelectValue;
             }
 
-            // Add filters if selected
+            // holds filtered data
             if (finalIngredientValue) searchParams.append('ingredient', finalIngredientValue);
             if (mainMealTypeSelect.value) searchParams.append('mealType', mainMealTypeSelect.value);
             if (mainCuisineSelect.value) searchParams.append('cuisine', mainCuisineSelect.value);
