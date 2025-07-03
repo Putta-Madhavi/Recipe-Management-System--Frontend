@@ -15,18 +15,35 @@ document.addEventListener("DOMContentLoaded", function () {
         allergies: document.getElementById("allergies").value.split(",").map(item => item.trim()),
         avoidIngredients: document.getElementById("avoid").value.split(",").map(item => item.trim())
       };
+   const dataconfirm = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        cookingSkillLevel: document.getElementById("cookingSkill").value,
+        dietaryPreferences: document.getElementById("dietary").value.split(",").map(item => item.trim()),
+        allergies: document.getElementById("allergies").value.split(",").map(item => item.trim()),
+        avoidIngredients: document.getElementById("avoid").value.split(",").map(item => item.trim())
+      };
+   
+      
 
       if (!data.name || !data.email || !data.password || !data.cookingSkillLevel) {
         showMessage("Please fill in all required fields.", "error");
         return;
       }
 
+      if(data.name != dataconfirm.name || data.email != dataconfirm.email || data.password != confirmdata.password || data.cookingSkillLevel !=data.cookingSkillLevel){
+        showMessage("password does not matched");
+        return;
+      }
       fetch("http://localhost:7090/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        body: JSON.stringify(dataconfirm)
+        
       })
       .then(response => {
         if (response.ok) {
@@ -38,8 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .then(message => {
+        showMessage(message,"confirm password");
         showMessage(message, "success");
         localStorage.setItem('loggedInUser', JSON.stringify({ name: data.name, email: data.email }));
+       localStorage.setItem('confirmpassword', JSON.stringify({ name: dataconfirm.name, email: dataconfirm.email }));
+
         setTimeout(() => {
           window.location.href = "login.html";
         }, 1000);
