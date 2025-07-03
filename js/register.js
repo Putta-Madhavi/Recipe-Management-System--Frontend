@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const registerForm = document.getElementById("registerForm");
 
@@ -6,72 +5,72 @@ document.addEventListener("DOMContentLoaded", function () {
     registerForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-        cookingSkillLevel: document.getElementById("cookingSkill").value,
-        dietaryPreferences: document.getElementById("dietary").value.split(",").map(item => item.trim()),
-        allergies: document.getElementById("allergies").value.split(",").map(item => item.trim()),
-        avoidIngredients: document.getElementById("avoid").value.split(",").map(item => item.trim())
-      };
-   const dataconfirm = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-        cookingSkillLevel: document.getElementById("cookingSkill").value,
-        dietaryPreferences: document.getElementById("dietary").value.split(",").map(item => item.trim()),
-        allergies: document.getElementById("allergies").value.split(",").map(item => item.trim()),
-        avoidIngredients: document.getElementById("avoid").value.split(",").map(item => item.trim())
-      };
-   
-      
+      // Get input values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value; // make sure this exists in HTML
+      const cookingSkillLevel = document.getElementById("cookingSkill").value;
+      const dietaryPreferences = document.getElementById("dietary").value.split(",").map(item => item.trim());
+      const allergies = document.getElementById("allergies").value.split(",").map(item => item.trim());
+      const avoidIngredients = document.getElementById("avoid").value.split(",").map(item => item.trim());
 
-      if (!data.name || !data.email || !data.password || !data.cookingSkillLevel) {
+      // Validate required fields
+      if (!name || !email || !password || !confirmPassword || !cookingSkillLevel) {
         showMessage("Please fill in all required fields.", "error");
         return;
       }
 
-      if(data.name != dataconfirm.name || data.email != dataconfirm.email || data.password != confirmdata.password || data.cookingSkillLevel !=data.cookingSkillLevel){
-        showMessage("password does not matched");
+      // Validate password match
+      if (password !== confirmPassword) {
+        showMessage("Passwords do not match.", "error");
         return;
       }
+
+      // Prepare data
+      const data = {
+        name,
+        email,
+        password,
+        cookingSkillLevel,
+        dietaryPreferences,
+        allergies,
+        avoidIngredients
+      };
+
+      // Send registration request
       fetch("http://localhost:7090/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(data),
-        body: JSON.stringify(dataconfirm)
-        
+        body: JSON.stringify(data)
       })
-      .then(response => {
-        if (response.ok) {
-          return response.text(); 
-        } else {
-          return response.text().then(err => {
-            throw new Error(err);
-          });
-        }
-      })
-      .then(message => {
-        showMessage(message,"confirm password");
-        showMessage(message, "success");
-        localStorage.setItem('loggedInUser', JSON.stringify({ name: data.name, email: data.email }));
-       localStorage.setItem('confirmpassword', JSON.stringify({ name: dataconfirm.name, email: dataconfirm.email }));
+        .then(response => {
+          if (response.ok) {
+            return response.text();
+          } else {
+            return response.text().then(err => {
+              throw new Error(err);
+            });
+          }
+        })
+        .then(message => {
+          showMessage("Registration successful!", "success");
+          localStorage.setItem('loggedInUser', JSON.stringify({ name, email }));
 
-        setTimeout(() => {
-          window.location.href = "login.html";
-        }, 1000);
-      })
-      .catch(error => {
-        showMessage(error.message || "Registration failed", "error");
-      });
+          setTimeout(() => {
+            window.location.href = "login.html";
+          }, 1000);
+        })
+        .catch(error => {
+          showMessage(error.message || "Registration failed", "error");
+        });
     });
   }
 });
 
-// Global showMessage to the user 
+// Global showMessage function
 function showMessage(message, type = "info") {
   let messageBox = document.getElementById("messageBox");
   if (!messageBox) {
@@ -97,9 +96,10 @@ function showMessage(message, type = "info") {
   }
 
   messageBox.textContent = message;
-  messageBox.style.backgroundColor = type === "success" ? "#4CAF50"
-    : type === "error" ? "#F44336"
-    : "#2196F3";
+  messageBox.style.backgroundColor =
+    type === "success" ? "#4CAF50" :
+      type === "error" ? "#F44336" :
+        "#2196F3";
 
   messageBox.style.display = 'block';
   setTimeout(() => messageBox.style.opacity = '1', 10);
