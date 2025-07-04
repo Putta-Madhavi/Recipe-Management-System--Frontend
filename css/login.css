@@ -189,3 +189,92 @@ body {
         margin-top: 20px;
     }
 }
+
+/* --- Clean & Rounded Google Login Button Styles --- */
+.google-login-button {
+    background-color: #ffffff; 
+    color: #333; 
+    border: 1px solid #dadce0;
+    border-radius: 9999px; 
+    padding: 12px 24px; 
+    font-size: 17px;
+    font-weight: 600; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.google-login-button:hover {
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12); 
+    transform: translateY(-2px);
+}
+
+.google-login-button:active {
+    transform: translateY(0); 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); 
+}
+
+.google-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .page-content-wrapper {
+        padding: 20px;
+    }
+    .login-box {
+        padding: 40px;
+    }
+    .login-box h2 {
+        font-size: 32px;
+    }
+    .login-box input,
+    .login-box button[type="submit"],
+    .google-login-button {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+    .google-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-content-wrapper {
+        padding: 15px;
+    }
+    .login-box {
+        padding: 30px;
+        border-radius: 15px;
+    }
+    .login-box h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .login-box input,
+    .login-box button[type="submit"],
+    .google-login-button {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    .google-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+    }
+    .social-login-options p {
+        font-size: 0.85em;
+    }
+}

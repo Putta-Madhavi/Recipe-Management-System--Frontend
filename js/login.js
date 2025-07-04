@@ -33,6 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
       showMessage("Server error, try later", "error");
     }
   });
+
+  // --- ADD GOOGLE LOGIN BUTTON EVENT LISTENER HERE ---
+  const googleLoginButton = document.getElementById("google-login-button");
+  if (googleLoginButton) {
+    googleLoginButton.addEventListener("click", function() {
+      window.location.href = 'http://localhost:7090/auth/google'; 
+    });
+  }
+
 });
 
 function showMessage(message, type = "info") {
