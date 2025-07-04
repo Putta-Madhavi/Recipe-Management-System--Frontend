@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # The Recipe Hub: Recipe Management System
 
 ![Mobile View - Hero Section and Search](https://raw.githubusercontent.com/Putta-Madhavi/recipeprojectimages/refs/heads/main/Screenshot%202025-06-30%20142354.png)
@@ -129,3 +130,6 @@ Here are some screenshots demonstrating the application:
 ## Conclusion
 
 The Recipe Hub is a complete recipe management system that demonstrates the seamless integration of a responsive frontend with a powerful Spring Boot backend and a MySQL database. It empowers users to register, personalize their experience, search for recipes, and contribute their own, making it a dynamic and user-centric platform for culinary enthusiasts.
+=======
+# Recipe-Management-System--Frontend
+>>>>>>> 93b7a1e13c15fc723a9e46069588284ae849b661
